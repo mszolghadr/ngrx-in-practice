@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 import { IsLoggedIn } from './auth.selectors';
 import { AppState } from '../reducers';
 
-@Injectable()
+@Injectable({ providedIn: 'root' })
 export class AuthGuard implements CanActivate {
     /**
      *
