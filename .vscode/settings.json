@@ -1,0 +1,16 @@
+{
+    "todo-tree.highlights.customHighlight": {
+        "_!_": {
+            "icon": "issue-closed",
+            "iconColour": "green",
+            "foreground": "red",
+            "type": "line",
+            "gutterIcon": true
+        },
+        "FIXME": {
+            "foreground": "black",
+            "iconColour": "yellow",
+            "gutterIcon": true
+        }
+    }
+}
