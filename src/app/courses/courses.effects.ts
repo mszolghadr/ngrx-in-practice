@@ -11,9 +11,17 @@ export class CoursesEffects {
 
     loadCourses$ = createEffect(
         () => this.actions$.pipe(
-                ofType(CoursesActions.loadingAllCourses),
-                concatMap(action => this.courseHttpService.findAllCourses()),
-                map(courses => CoursesActions.allCoursesLoaded({ courses }))
-            )
+            ofType(CoursesActions.loadingAllCourses),
+            concatMap(action => this.courseHttpService.findAllCourses()),
+            map(courses => CoursesActions.allCoursesLoaded({ courses }))
+        )
+    );
+
+    saveCourse$ = createEffect(
+        () => this.actions$.pipe(
+            ofType(CoursesActions.courseUpdated),
+            concatMap(action => this.courseHttpService.saveCourse(action.update.id, action.update.changes))
+        ),
+        { dispatch: false }
     );
 }
