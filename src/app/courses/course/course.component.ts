@@ -1,18 +1,17 @@
 import { LessonsEntityService } from './../services/lessons-entity.service';
 import { CoursesEntityService } from './../services/courses-entity.service';
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Course } from '../model/course';
 import { Observable } from 'rxjs';
 import { Lesson } from '../model/lesson';
 import { concatMap, delay, filter, first, map, shareReplay, tap, withLatestFrom } from 'rxjs/operators';
-import { CoursesHttpService } from '../services/courses-http.service';
-
 
 @Component({
   selector: 'course',
   templateUrl: './course.component.html',
-  styleUrls: ['./course.component.css']
+  styleUrls: ['./course.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CourseComponent implements OnInit {
 
